@@ -877,8 +877,10 @@ without the hook gives LG's Home back. Verified on an LG 49UN7100
 
 webOS 7 (webOS 22) is allowed through the same native Home and lifecycle-v2 checks. Filesystem
 fixtures cover method selection, incompatible manifest rejection, enable and disable for both
-Home targets. This is experimental, not hardware verification: remote Home-key relaunch,
-standby, cold-boot reapplication and LG Home restoration still need testing on a webOS 7 TV.
+Home targets. The unified branch also has limited hardware evidence from one 43UQ75006LG
+running 7.6.0: same-process Home relaunch, Recent apps, Close all, preserved remote mappings,
+and reapplication after a software restart. See [tested configurations](docs/tested-tv-configurations.md).
+Hard power removal and all standby/Quick Start combinations remain unverified.
 
 webOS 24 (9.x) also uses this method because its SAM has no `releaseBlockSystemApp` to reread a
 mounted Home manifest. The author verified takeover, same-process Home-key relaunch and cold-boot

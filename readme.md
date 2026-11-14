@@ -203,7 +203,8 @@ luna-send -i luna://com.webos.appInstallService/dev/install \
 > Takeover is supported on **webOS 5, 6, 24, 25 and 26**.\
 > On 5, 6 and 24 it replaces the Home executable; on 25 and 26 it mounts Luma's Home app.\
 > **webOS 7 (webOS 22)** can also use executable takeover when LG Home is native and declares
-> lifecycle v2. This path is experimental and has not been verified on a webOS 7 TV.\
+> lifecycle v2. The unified branch was tested on one 43UQ75006LG running 7.6.0;
+> see [tested configurations](docs/tested-tv-configurations.md) for the limits.\
 > The takeover does not delete LG Home: it remains underneath a temporary mount, which is cleared by
 > a reboot. If Luma is uninstalled first, LG Home returns on reboot, but the separate takeover boot
 > hook remains and logs an error because it can no longer find Luma. No TV reset is needed. For
