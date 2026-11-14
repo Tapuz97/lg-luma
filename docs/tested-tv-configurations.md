@@ -8,12 +8,13 @@ Personal preferences, remote mappings and installed-app data are not bundled.
 | Capability | LG 43UQ75006LG, webOS 7.6.0 | LG 65UK6300YVB, webOS 4.4.3-22 |
 | --- | --- | --- |
 | Firmware | 04.60.92 | 05.50.70 |
-| Hardware-tested custom build | 3.2.1-based unified build | Earlier 3.1.0-based build |
+| Hardware-tested custom build | 3.2.1-based unified build | 3.2.1-based contribution build |
 | Home integration | Native lifecycle-v2 Home executable mount | Compositor filter; embedded OEM Home |
 | Home / Apps / Settings | Verified; drawer disabled | Verified; drawer disabled |
 | Back from Home | Luma Recent apps | Luma Recent apps |
 | Recent apps backend | LG recent-history service | SAM running-card inventory |
 | X Close all | Verified; normal apps closed through SAM | Verified; normal apps closed through SAM |
+| Recent-app arrows | Up closes the selected app; Down selects bottom-center Close all | Up closes the selected app; Down selects bottom-center Close all |
 | Protected apps | Home, Live TV, AirPlay and overlays retained | Home, inputs, AirPlay and overlays retained |
 | Home after opening an app | Same native Home process | Standalone Luma surface, reset to Home |
 | Existing remote mapper | Preserved; Prime and night-mode actions verified | Preserved; owner confirmed Prime and Voice |
@@ -28,9 +29,16 @@ foreground as `com.webos.app.home`. The early-start log records uptime 19.38
 seconds; an independent status check at 56 seconds confirmed the mounted checksum,
 unchanged preferences and the active original remote mapper.
 
-The unified 3.2.1 package has not been installed on the second TV. Its earlier
-hardware results establish the legacy integration's behavior on that specific
-device, rather than verification of every later build or other models.
+The first TV uses the unified 3.2.1 package with webOS 7 eligibility; the second
+uses the 3.2.1 contribution package, which retains the webOS 4 integration. Both
+packages contain the same native launcher executable. The recent-app arrow fix
+was installed and checked on both TVs, with their current preferences and remote
+mapping files unchanged. Up closed only the selected normal app while other
+normal apps stayed running, then Down and OK closed the remaining normal apps.
+Up from Close all returned to the selected card without closing it. These latest
+UI checks did not include another software restart; the startup evidence above
+comes from the preceding 3.2.1 Home upgrade on the first TV and earlier 3.1-based
+tests on the second. Other models remain unverified.
 
 ## Installation and updates
 
